@@ -2,5 +2,22 @@
   <body>
     <h1>Helllo worrld !!!</h1>
     <p>Hello SaiRam. Static websites can be deployed on GitHub pages for free. Try it now.</p>
+    <br>
+    <h5>Addding interaction using script</h5>
+    <p id="nameP">Enter Name: <input id="nameInp" name="username" type="text"></p>
+    <button onclick="showName()">submit</button>
+    <p id="showName"></p>
+    <script>
+        function showName(){
+          const nameInp = document.getElementById("nameInp");
+          const name = nameInp.value;
+          nameInp.value = "";
+          const para = document.getElementById("nameP");
+          const nameP = document.getElementById("showName");
+          nameP.textContent = "Your name is " + name;
+          document.body.appendChild(nameP);
+          nameInp.focus();
+        }
+    </script>
   </body>
 </html>
