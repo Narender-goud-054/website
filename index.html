@@ -18,6 +18,35 @@
           document.body.appendChild(nameP);
           nameInp.focus();
         }
+
+        <div id="text-container">Loading data...</div>
+
+        async function fetchAndDisplayText() {
+          const container = document.getElementById('text-container');
+          const url = 'https://koyeb.nimscvtsbootcamp2026.in/hello'; // Replace with your API URL
+
+          try {
+              const response = await fetch(url);
+              
+              // Always check if the response is successful (status 200-299)
+              if (!response.ok) {
+                  throw new Error(`HTTP error! status: ${response.status}`);
+              }
+
+              // Convert the response body to a plain string
+              const data = await response.text();
+
+              // Update the page with the received text
+              container.innerText = data; 
+          } catch (error) {
+              console.error('Fetch error:', error);
+              container.innerText = 'Failed to load data.';
+          }
+        }
+
+    // Execute the function
+    fetchAndDisplayText();
+
     </script>
   </body>
 </html>
