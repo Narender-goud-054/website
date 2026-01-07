@@ -7,6 +7,7 @@
     <p id="nameP">Enter Name: <input id="nameInp" name="username" type="text"></p>
     <button onclick="showName()">submit</button>
     <p id="showName"></p>
+    <div id="text-container">Loading data...</div>
     <script>
         function showName(){
           const nameInp = document.getElementById("nameInp");
@@ -19,7 +20,6 @@
           nameInp.focus();
         }
 
-        <div id="text-container">Loading data...</div>
 
         async function fetchAndDisplayText() {
           const container = document.getElementById('text-container');
